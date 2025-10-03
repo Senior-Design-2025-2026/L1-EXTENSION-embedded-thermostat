@@ -1,3 +1,5 @@
+[Return to ECE-Senior-Design-Lab-1-EXTENSION -->](https://github.com/Senior-Design-2025-2026/ECE-Senior-Design-Lab-1-EXTENSION/tree/main)
+
 # L1-EXTENSION-embedded Thermostat
 Physical embedded system to read and send real-time temperature information. We used a Raspberry Pi 4 as our device _(having originally intending on running both the embedded code and web application on the device)_
 
