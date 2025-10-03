@@ -1,10 +1,35 @@
-# L1-embedded-thermostat
+# L1-EXTENSION-embedded Thermostat
+Physical embedded system to read and send real-time temperature information. We used a Raspberry Pi 4 as our device _(having originally intending on running both the embedded code and web application on the device)_
 
-This project builds and runs C++ code on the Raspberry Pi.
+<div align="center">
+  <img src="img/arch.png" alt="application responsibility" width="800">
+  <div><em>System Architecture</em></div>
+  <br>
+</div>
 
----
-## Setting Environment Variables
+<div align="center">
+  <img src="img/pinout.png" alt="application responsibility" width="800">
+  <div><em>Raspberry Pi Pinout</em></div>
+</div>
 
+## Responsibilities
+**1. Detect Physical Temperatures:**
+- Reads from attached sensors every second
+
+**2. Post Readings to Streamer API:**
+- Send temperature readings to the Streamer API be visualized downstream within the dashboard
+
+## Key (External) Libraries
+**[WiringPi](https://github.com/wiringpi):** 
+- Used for physical wiring of the temperature sensor
+
+**[Font5x7.hpp]():** 
+- Writing strings to the display
+
+**[rpi1306i2c.hpp]():** 
+- I2C connection to display
+
+# Running the Embedded Code
 The program needs to know the host and port for the server it connects to.
 
 1. **Create Host**
@@ -37,8 +62,3 @@ The easiest way to create the executable is to use the provided `Makefile`.
    ```bash
        make run
     ```
-
-Or run this command manually:
-g++ -std=c++20 -I./include -L../WiringPi src/main.cpp -o main -lwiringPi
-./main
-
